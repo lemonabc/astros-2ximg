@@ -1,10 +1,10 @@
 {
   "name": "astros-2ximg",
-  "version": "0.0.6",
+  "version": "1.0.1",
   "description": "Astro中间件。访问图片时，会根据二倍图生成一倍图。",
   "main": "astro-2ximg.js",
-  "dependencies": {
-    "image-magic":">=0.0.2"
+  "peerDependencies": {
+    "image-magic":"~1.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
