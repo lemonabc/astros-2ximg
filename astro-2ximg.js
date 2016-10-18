@@ -15,17 +15,15 @@ module.exports = new astro.Middleware({
 }, function(asset, next) {
     // 发布 abc2x.jpg时，自动发布abc.jpg
     if (asset.status == 'release' &&
-        (/2x$/i).test(path.basename(asset.path, asset.extname))) {
-
+        (/2x$/i).test(path.basename(asset.filePath, asset.extname))) {
         let half = asset.clone();
-    
-        half.path = asset.filePath.replace(/2x(\..*?)$/i, function(a, b) {
+        half.filePath = asset.filePath.replace(/2x(\..*?)$/i, function(a, b) {
             return b
         });
         half.name = asset.name.replace(/2x(\..*?)$/i, function(a, b) {
             return b
         });
-        img.createImgFrom2xWithCacheSync(half.path,
+        img.createImgFrom2xWithCacheSync(half.filePath,
             path.join(asset.prjCfg.imgCache, 'img2x.json'));
 
         // half.debug = 1;

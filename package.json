@@ -1,6 +1,6 @@
 {
   "name": "astros-2ximg",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "会根据二倍图生成一倍图。",
   "main": "astro-2ximg.js",
   "scripts": {
